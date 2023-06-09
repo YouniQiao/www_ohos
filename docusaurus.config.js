@@ -32,6 +32,10 @@ const config = {
     locales: ['en'],
   },
 
+  scripts: [
+    {src: 'https://hm.baidu.com/hm.js?c82a895adfdf1852c59563c04a4bd222',  async: true}
+  ],
+
   presets: [
     [
       'classic',
