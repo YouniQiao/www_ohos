@@ -1,41 +1,62 @@
-import React from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import Translate from '@docusaurus/Translate'
+import useBaseUrl from '@docusaurus/useBaseUrl'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import Layout from '@theme/Layout'
+import clsx from 'clsx'
+import React from 'react'
 
-import styles from './index.module.css';
+import PickVersion from '../components/PickVersion'
+import styles from './index.module.css'
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+function Feature({ imgUrl, title, description, reverse }) {
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
+    <div className={clsx('row', styles.feature, reverse && styles.featureReverse)}>
+      <div className="col col--6 text--center">
+        <img className={styles.featureImage} src={useBaseUrl(imgUrl)} alt={title} />
+      </div>
+      <div className={clsx('col col--6', styles.featureContent)}>
+        <div>
+          <h3>{title}</h3>
+          <div>{description}</div>
         </div>
       </div>
-    </header>
-  );
+    </div>
+  )
 }
 
-export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+function Home() {
+  const { siteConfig } = useDocusaurusContext()
+
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
+    <Layout title={siteConfig.tagline} description={siteConfig.tagline}>
       <main>
-        <HomepageFeatures />
+        <div className="hero">
+          <div className="container text--center">
+            <div className={styles.heroLogoWrapper}>
+              <img className={styles.heroLogo} src={useBaseUrl('img/logos/logo-mini.svg')} alt="Chaos Mesh" />
+            </div>
+            <h1 className={clsx('hero__title', styles.heroTitle)}>Play OpenHarmony</h1>
+            <p className="hero__subtitle">
+              <Translate id="siteConfig.tagline">An Awesome Demo for OpenHarmony App Developing。</Translate>
+            </p>
+          </div>
+        </div>
+
+        <div className="hero-divider" />
+
+        <div className="hero">
+          <div className="container text--center">
+            <h2 className="hero__subtitle">
+              <Translate id="home.quickstart">Get Demo by Git</Translate>
+            </h2>
+            <PickVersion>git clone git@gitee.com:openharmony-cool/awesome-openharmony-demo.git</PickVersion>
+          </div>
+        </div>
+
+      
       </main>
     </Layout>
-  );
+  )
 }
+
+export default Home
