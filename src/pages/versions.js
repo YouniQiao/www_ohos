@@ -20,7 +20,7 @@ export default function Versions() {
             official documentation, and the rest will be archived.
           </p>
           <p>
-            You can learn more about our version support via <Link to="/supported-releases">Supported Releases</Link>.
+            You can learn more about our version support via <Link to="/">Supported Releases</Link>.
           </p>
 
           <h2>Development version</h2>
@@ -29,7 +29,7 @@ export default function Versions() {
             unstable. <strong>It is not recommended to use it in production</strong>.
           </p>
           <Link
-            to="/docs/next"
+            to="/"
             className={clsx('button button--outline button--primary margin-right--sm', styles.viewNextDoc)}
           >
             View Documentation
@@ -65,7 +65,7 @@ export default function Versions() {
                   <div className="card__footer">
                     <div className="button-group">
                       <Link
-                        to={`/docs${i === 0 ? '' : '/' + version.version}`}
+                        to={`/`}
                         className="button button--outline button--primary"
                       >
                         Documentation

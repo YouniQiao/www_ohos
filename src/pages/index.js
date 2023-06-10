@@ -28,7 +28,7 @@ function Home() {
   const { siteConfig } = useDocusaurusContext()
 
   return (
-    <Layout title={siteConfig.tagline} description={siteConfig.tagline}>
+    <Layout description={siteConfig.tagline}>
       <main>
         <div className="hero">
           <div className="container text--center">
