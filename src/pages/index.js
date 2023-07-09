@@ -37,7 +37,7 @@ function Home() {
             </div>
             <h1 className={clsx('hero__title', styles.heroTitle)}>Play OpenHarmony</h1>
             <p className="hero__subtitle">
-              <Translate id="siteConfig.tagline">An Awesome Demo for OpenHarmony App Developing。</Translate>
+              <Translate id="siteConfig.tagline">An Awesome Demo for OpenHarmony App Developing.</Translate>
             </p>
           </div>
         </div>
@@ -49,7 +49,7 @@ function Home() {
             <h2 className="hero__subtitle">
               <Translate id="home.quickstart">Get Demo by Git</Translate>
             </h2>
-            <PickVersion>git clone git@gitee.com:openharmony-cool/awesome-openharmony-demo.git</PickVersion>
+            <PickVersion>git clone git@gitee.com:openharmony-cool/openharmony-demo.git</PickVersion>
           </div>
         </div>
 
